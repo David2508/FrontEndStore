@@ -33,9 +33,7 @@ a{
 }
 img{
     max-width: 100%;
-    border:.5px solid #89119D;
-    padding:5px;
-    border-radius: 2rem;
+
 }
 .contenedor{
     max-width: 120rem;
@@ -56,8 +54,7 @@ h2{font-size: 2.4rem;}
 }
 .header__logo{
     margin: 3rem 0;
-    border: none;
-    border-radius: 0;
+   
 }
 .footer{
 background-color: var(--primarioOscuro);
@@ -85,19 +82,60 @@ font-size: 2.2rem;
 color: var(--secundarioOscuro);
 }
 /* Cuando se tiene un ultimo elemento class.last-of-type o first */
-
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* column-gap: 2rem;
+    row-gap: 2rem; */
+    gap: 2rem;
+}
+@media (min-width: 768px){
+   .grid{
+    grid-template-columns: repeat(3,1fr);
+   }
+}
 .producto{
-
+background-color: var(--primarioOscuro);
+padding: 1rem;
 }
 .producto__imagen{
-
-}
-.producto__informacion{
-
+width: 100%; /*imagen resposiva (está dentro de un div */
 }
 .producto__nombre{
-
+font-size: 4rem;
 }
 .producto__precio{
-
+font-size: 2.8rem;
+color: var(--secundario);
+line-height: 1.2rem;
 }
+.producto__nombre, .producto__precio{
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+}
+/* Graficos */
+.grafico{
+min-height: 30rem;
+background-repeat: no-repeat;/* No se repite la imagen de fondo  */
+background-size: cover;/* Se estire o llene el espacio que tiene  */
+grid-column: 1 /3;
+}
+.grafico--camisas{
+grid-row: 2 / 3;
+background-image: url(../img/grafico1.jpg);
+/*  Posicionando elementos con GRID row numeros de arriba hacia abajo
+column izquierda-> derecha */
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+  
+    grid-row: 8 / 9;
+}
+@media (min-width: 768px){
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 /4;
+    } 
+}
+/* recordar que los media que estpy usando dentro de estos va el diseño para pantalla grande :) */
